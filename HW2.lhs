@@ -45,7 +45,8 @@ For example,
 
 \begin{code}
 map :: (a -> b) -> Tree a -> Tree b 
-map f t = error "Define me!"
+map f Tip = Tip
+map f (Bin v lt rt) = Bin (f v) (map f lt) (map f rt)
 \end{code}
 
 2. **Folding:** Define a function that folds the elements of a tree, 
@@ -56,7 +57,8 @@ top to bottom and left to right; so that
 
 \begin{code}
 fold :: (b -> a -> b) -> b -> Tree a -> b 
-fold f b = error "Define me!"
+fold f b Tip = b
+fold f b (Bin v lt rt) = fold f (fold f (f b v) lt) rt
 \end{code}
 
 3. **Elements:** Use your `fold` function to define a function that returns the list 
@@ -66,8 +68,8 @@ of all the elements of the tree. For example,
 < elems  tree4 == ["tree","a","I am"] 
 
 \begin{code}
-elems :: Tree a -> [a]
-elems t = error "Define me!"
+-- elems :: Tree a -> [a]
+-- elems t = fold (:[]) [] t
 \end{code}
 
 
@@ -141,8 +143,8 @@ complete the definitions below so that
 mergeBy :: (a -> a -> Ordering) -> [a] -> [a] -> [a]
 mergeBy cmp xs ys     = error "Define me!"
 
-mergeSortBy :: (a -> a -> Ordering) -> [a] -> [a]
-mergeSortBy cmp xs ys = error "Define me!"
+-- mergeSortBy :: (a -> a -> Ordering) -> [a] -> [a]
+-- mergeSortBy cmp xs ys = error "Define me!"
 \end{code}
 
 

@@ -1,0 +1,14 @@
+In order to run public tests:
+
+1) Make sure HW2.lhs is in the same folder as the other files. Make sure tic-tac-toe/ is also in the same folder as HW2.lhs. Make sure your version of MinMax.lhs is in tic-tac-toe/src/Player. Also ensure it is still in Module "HW2" and you have not altered the name (though it can be a .hs file if you want).
+
+2) Run `make`
+
+3) Run `./run_tests.sh`
+
+4) If #3 doesn't work, try first `chmod +x run_tests.sh` then try #3 again.
+
+5) If it still doesn't work:
+      - ensure you didn't mess with any imports
+      - ensure you didn't change any module names
+      - ensure you didnt move MinMax.lhs from tic-tac-toe/src/Player/
